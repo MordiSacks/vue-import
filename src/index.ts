@@ -21,7 +21,7 @@ export default async function (url: string, props: ComponentOptions = {}): Promi
   ele.innerHTML = sfc;
   const template = ele.querySelector('template')?.innerHTML;
   const styleList = ele.querySelectorAll('style');
-  const script = ele.querySelector('script');
+  const script = ele.querySelector('script:not([type="importmap"])');
   let sfcProps: ComponentOptions = {};
 
   // 1、es module无法从外部js直接获取导出模块
